@@ -30,7 +30,7 @@ async def process_no_answer(message: Message):
 
 
 @router.message(F.text.in_((LEXICON_RU['rock'],
-                           LEXICON_RU['paper'], LEXICON_RU['scissors'])))
+                            LEXICON_RU['paper'], LEXICON_RU['scissors'])))
 async def process_game_btn(message: Message):
     bot_choice = get_bot_choice()
 
@@ -38,8 +38,3 @@ async def process_game_btn(message: Message):
                               f'- {LEXICON_RU[bot_choice]}')
     winner = get_winner(message.text, bot_choice)
     await message.answer(text=LEXICON_RU[winner], reply_markup=yes_no_kb)
-
-
-
-
-
